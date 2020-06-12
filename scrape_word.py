@@ -55,7 +55,7 @@ def scrape_word(word, result_to_return=0):
 
             definitions.append(formatted_definition)
 
-        if result_to_return <= len(definitions):
+        if result_to_return <= len(definitions) and result_to_return != 0:
             return definitions[result_to_return-1]
         else:
             return definitions[0]
