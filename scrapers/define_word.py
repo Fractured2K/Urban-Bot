@@ -19,22 +19,21 @@ def scrape_word(word, result_to_return=0):
             "error": f"Sorry, but we couldn't find: {word}"
         }
 
-    # Handle 200 (Successful page scrape)
     if result.status_code == 200:
         # Parse page
         soup = BeautifulSoup(result.content, 'lxml')
 
-        # Scraped definitions
+        # Definitions
         scraped_definitions = soup.find_all("div", class_="def-panel")
-        # Hold Formatted and scraped definitions
+        # Store
         definitions = []
 
-        for result_num in range(len(scraped_definitions)):
-            # Current definition result
-            definition = scraped_definitions[result_num]
+        for result in range(len(scraped_definitions)):
+            # Current definition
+            definition = scraped_definitions[result]
 
             # Skip word of the day
-            if result_num == 1:
+            if result == 1:
                 continue
 
             # Defined word -> "Stupendous"
@@ -61,4 +60,4 @@ def scrape_word(word, result_to_return=0):
             return definitions[0]
 
 
-sys.modules[__name__] = scrape_word
+sys.modules[__name__] = define_word

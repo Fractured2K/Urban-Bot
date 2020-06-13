@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import scrape_word
+from scrapers import define_word
 from utils.messages import error_message, define_message
 
 
@@ -37,20 +37,18 @@ class Commands(commands.Cog):
         if args[0].isnumeric():
             return await ctx.send("Define requires at least one argument `{word}`")
 
-        # Word to define
+        # Store
         word = ''
-        # Result to return
-        result_num = 0
+        result = 0
 
         for arg in args:
-            # Check if arg is word or result_num
             if arg.isnumeric():
-                result_num = int(arg)
+                result = int(arg)
             else:
                 word += f" {arg}"
 
         # Scrape Word
-        word = scrape_word(word, result_num)
+        word = define_word(word, result)
 
         if "error" in word:
             embed = error_message(word["error"])
@@ -58,6 +56,8 @@ class Commands(commands.Cog):
         else:
             embed = define_message(word)
             return await ctx.send(embed=embed)
+        
+    
 
 
 def setup(client):
