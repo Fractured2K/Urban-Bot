@@ -4,9 +4,8 @@ from bs4 import BeautifulSoup
 from utils.parsers import parse_definitions
 
 
-def define_word(word, result_to_return=0):
-    result = requests.get(
-        f"https://www.urbandictionary.com/define.php?term={word}")
+def scrape_wotd():
+    result = requests.get(f"https://www.urbandictionary.com")
 
     if result.status_code == 500:
         return {
@@ -21,14 +20,10 @@ def define_word(word, result_to_return=0):
     if result.status_code == 200:
         soup = BeautifulSoup(result.content, 'lxml')
 
-        # Parse definitions and remove wotd from parsed definitions
+        # Parse definitions
         definitions = parse_definitions(soup)
-        definitions.pop(1)
 
-        if result_to_return <= len(definitions) and result_to_return != 0:
-            return definitions[result_to_return-1]
-        else:
-            return definitions[0]
+        return definitions.pop(0)
 
 
-sys.modules[__name__] = define_word
+sys.modules[__name__] = scrape_wotd

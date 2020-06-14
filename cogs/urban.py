@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from scrapers import define_word
+from scrapers import define_word, scrape_wotd
 from utils.messages import error_message, define_message
 
 
@@ -56,8 +56,19 @@ class Commands(commands.Cog):
         else:
             embed = define_message(word)
             return await ctx.send(embed=embed)
-        
-    
+
+    @commands.command()
+    async def wotd(self, ctx):
+        # Check if redis store contains current wotd
+
+        # Scrape current wotd
+        wotd = scrape_wotd()
+
+        # Store wotd
+
+        # Return wotd
+        embed = define_message(wotd)
+        return await ctx.send(embed=embed)
 
 
 def setup(client):
