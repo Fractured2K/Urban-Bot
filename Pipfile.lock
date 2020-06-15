@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "454127fdf466c88447c0070e96c8b38f6750a01c7a71ca6d9eeff2afa5fdb59f"
+            "sha256": "e93bb8233c96997475403e07ec01a441077fefc00fba46ee8952acd69cce288a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -80,6 +80,13 @@
             ],
             "index": "pypi",
             "version": "==1.3.3"
+        },
+        "expiringdict": {
+            "hashes": [
+                "sha256:fe2ba427220425c3c8a3d29f6d2e2985bcee323f8bcd4021e68ebefbd90d8250"
+            ],
+            "index": "pypi",
+            "version": "==1.2.1"
         },
         "idna": {
             "hashes": [
@@ -221,14 +228,5 @@
             "version": "==1.4.2"
         }
     },
-    "develop": {
-        "watchgod": {
-            "hashes": [
-                "sha256:59700dab7445aa8e6067a5b94f37bae90fc367554549b1ed2e9d0f4f38a90d2a",
-                "sha256:e9cca0ab9c63f17fc85df9fd8bd18156ff00aff04ebe5976cee473f4968c6858"
-            ],
-            "index": "pypi",
-            "version": "==0.6"
-        }
-    }
+    "develop": {}
 }
