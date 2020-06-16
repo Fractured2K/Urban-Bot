@@ -1,5 +1,0 @@
-----
-Random (Command) -> Loads urban dictionary.com and clicks the random button scraping the top result and returning it
-Trending (Command) -> Scrapes 10 trending words and you can vote which one to return using emojis
-Word of the day (Command) -> Scrape word of the day
-----

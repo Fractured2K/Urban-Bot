@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from utils.parsers import parse_definitions
 
 
-def define_word(word, result_to_return=0):
+def scrape_word(word, result_to_return=0):
     result = requests.get(
         f"https://www.urbandictionary.com/define.php?term={word}")
 
@@ -31,4 +31,4 @@ def define_word(word, result_to_return=0):
             return definitions[0]
 
 
-sys.modules[__name__] = define_word
+sys.modules[__name__] = scrape_word
