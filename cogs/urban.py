@@ -112,6 +112,13 @@ class Commands(commands.Cog):
             embed = trending_message(trending)
             await ctx.send(embed=embed)
 
+    @commands.command()
+    async def random(self, ctx):
+        word_definition = scrape_random_word()
+
+        embed = define_message(word_definition)
+        await ctx.send(embed=embed)
+
 
 def setup(client):
     client.add_cog(Commands(client))

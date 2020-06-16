@@ -9,7 +9,7 @@ from utils.parsers import parse_definitions
 def scrape_random_word():
     random_page_num = random.randint(1, 1000)
     result = requests.get(
-        f"https://www.urbandictionary.com/random.php?page={random_num}")
+        f"https://www.urbandictionary.com/random.php?page={random_page_num}")
 
     if result.status_code == 500:
         return {
