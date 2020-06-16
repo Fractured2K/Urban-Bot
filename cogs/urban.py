@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from scrapers import scrape_word, scrape_wotd, scrape_trending_words, scrape_random_word
-from utils.messages import error_message, define_message, trending_message
+from utils.messages import help_message, error_message, define_message, trending_message
 from expiringdict import ExpiringDict
 
 
@@ -18,16 +18,7 @@ class Commands(commands.Cog):
         :param ctx:
         :return:
         """
-        embed = discord.Embed(
-            title="Help", description="`!` denotes an argument is required. `?` denotes an arugment is optional. Following `!` or `?` is the expected data type of the argument. i.e `!string {word}` -> Means the argument `word` is `required` and accepts a `string (letters)`", color=0x0b4ee7)
-        embed.add_field(name="help", value="This command", inline=False)
-        embed.add_field(
-            name="define", value="Accepts two arguments `!string {word}` and `?int {result}`. e.g `.define stupendous`", inline=False)
-        embed.add_field(
-            name="wotd", value="Returns the word of the day and its definition", inline=False)
-        embed.add_field(
-            name="trending", value="Returns a list of today's currently trending words. If a number is passed, the word correlated with that number will be defined. e.g `.trending 2`")
-
+        embed = help_message()
         await ctx.send(embed=embed)
 
     @commands.command()
