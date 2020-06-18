@@ -70,4 +70,10 @@ Want to deploy your own verson of Urban Bot? Here's how!
 
 6. Head over to the settings page. Under `Config Vars` go ahead and select `Reveal Config Vars` and let's add a new one. Set the `KEY` to `TOKEN` and set the value to your bots secret token.
 
+7. Now we can deploy the bot to heroku! Click the deploy tab and under `Manual Deploy` click deploy branch. This will start the build.
+
+8. Once the build is done and succesful skedaddle on over to the Overview tab and under `Dyno Formation` check if the worker is on. If not, click `Configure Dynos` and toggle the worker on.
+
+Done 🎉🥳
+
 #### [back to top](#urban-bot-🤖)
