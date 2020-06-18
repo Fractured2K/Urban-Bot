@@ -2,8 +2,9 @@ import discord
 import os
 from discord.ext import commands
 
-
+# Prefix commmands
 client = commands.Bot(command_prefix='.')
+# Remove default help command
 client.remove_command('help')
 
 # Load bot commands
