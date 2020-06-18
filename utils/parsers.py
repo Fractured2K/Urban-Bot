@@ -7,14 +7,15 @@ def parse_definitions(soup):
     :param soup:
     :return definitions:
     """
-    # Definition blocks
-    definition_blocks = soup.find_all("div", class_="def-panel")
+
+    # Definition panels
+    definition_panels = soup.find_all("div", class_="def-panel")
     # Store
     definitions = []
 
-    for result in range(len(definition_blocks)):
+    for result in range(len(definition_panels)):
         # Current definition block
-        definition = definition_blocks[result]
+        definition = definition_panels[result]
 
         # Defined word -> "Stupendous"
         word = definition.find(class_="word").text
