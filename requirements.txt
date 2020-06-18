@@ -9,7 +9,8 @@ expiringdict==1.2.1
 idna==2.9
 lxml==4.5.1
 multidict==4.7.6
-requests==2.23.0
+python-dotenv==0.13.0
+requests==2.24.0
 soupsieve==2.0.1
 urllib3==1.25.9
 watchgod==0.6
