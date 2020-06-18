@@ -17,4 +17,4 @@ async def on_ready():
     print(f"Logged in as {client.user}")
 
 
-client.run("NzIwMzYzMTIxMzg2MTkzMDA5.XuE8aQ.Z1pgEQUS9kg4MhP7B5trI9aVWmA")
+client.run(os.getenv("TOKEN"))
