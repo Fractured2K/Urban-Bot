@@ -15,6 +15,8 @@ for filename in os.listdir('./cogs'):
 
 @client.event
 async def on_ready():
+    # Update bot status
+    await client.change_presence(activity=discord.Game('.help'))
     print(f"Logged in as {client.user}")
 
 
