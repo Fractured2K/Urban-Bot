@@ -23,7 +23,9 @@ def scrape_word(word, result_to_return=0):
 
         # Parse definitions and remove wotd from parsed definitions
         definitions = parse_definitions(soup)
-        definitions.pop(1)
+
+        if len(definitions) > 1:
+            definitions.pop(1)
 
         if result_to_return <= len(definitions) and result_to_return != 0:
             return definitions[result_to_return-1]
