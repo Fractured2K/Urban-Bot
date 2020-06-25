@@ -8,10 +8,10 @@ Urban bot, is a simple to use and robust dscord bot that allows you to easily de
 
 Below you'll find some help quick links to help get started!
 
--   [Commands](#commands-✍)
--   [Configure a Development Environment](#configure-a-dev-environment-💻)
--   [Deploy Urban Bot](#deploy-urban-bot-🚀)
--   [Contributing](#contributing-✨)
+-   [Commands](#commands-)
+-   [Configure a Development Environment](#configure-a-dev-environment-)
+-   [Deploy Urban Bot](#deploy-urban-bot-)
+-   [Contributing](#contributing-)
 
 # Commands ✍
 
@@ -74,6 +74,7 @@ Want to deploy your own verson of Urban Bot? Here's how!
     | ---------- | ------------ |
     | TOKEN      | TOKEN_SECRET |
     | PRODUCTION | True         |
+    | AVATAR_URL | Image URL    |
 
 7. Now we can deploy the bot to heroku! Click the deploy tab and under `Manual Deploy` click deploy branch. This will start the build.
 
